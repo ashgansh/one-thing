@@ -13,6 +13,9 @@ import './styles.css'
 const theme = createTheme({
   palette: {
     mode: 'dark',
+    primary: {
+      main: '#ffffff',
+    },
   },
 });
 

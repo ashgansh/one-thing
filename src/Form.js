@@ -23,6 +23,7 @@ const App = ({ task }) => {
     // const fakeDeadline = new Date("2021-12-28T19:06:41.435Z");
     // e.deadline = fakeDeadline;
     // e.created = fakeCreated;
+    e.created = new Date();
     localStorage.setItem("task", JSON.stringify(e));
     toast.success("Task added! You can now reload the page");
   };
