@@ -6,6 +6,7 @@ import { useForm, Controller } from "react-hook-form";
 import { Box, Grid, Input } from "@mui/material";
 
 import { Button } from "@mui/material";
+import toast from "react-hot-toast";
 
 
 // }
@@ -24,6 +25,7 @@ const App = ({ task }) => {
     // e.deadline = fakeDeadline;
     // e.created = fakeCreated;
     localStorage.setItem("task", JSON.stringify(e));
+    toast.success('Task added! You can now reload the page')
   };
 
   return (

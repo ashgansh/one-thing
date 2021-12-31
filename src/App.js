@@ -3,6 +3,7 @@ import { orange } from "@mui/material/colors";
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 import { Progress } from "./Example";
 import Form from "./Form";
 import './styles.css'
@@ -36,8 +37,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme} >
+      <Toaster />
       <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
-        <Card elevation={2} style={{
+        <Card elevation={3} style={{
           position: 'relative',
           background: 'transparent',
           color: 'white',
