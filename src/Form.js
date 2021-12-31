@@ -7,26 +7,7 @@ import { Box, Grid, Input } from "@mui/material";
 
 import { Button } from "@mui/material";
 
-// function MaterialUIPickers() {
-//   const [value, setValue] = React.useState(new Date());
 
-//   const handleChange = (newValue) => {
-//     setValue(newValue);
-//   };
-
-//   return (
-//     <LocalizationProvider dateAdapter={AdapterDateFns}>
-//       <Stack spacing={3}>
-//         <DesktopDatePicker
-//           label="Date desktop"
-//           inputFormat="MM/dd/yyyy"
-//           value={value}
-//           onChange={handleChange}
-//           renderInput={(params) => <TextField {...params} />}
-//         />
-//       </Stack>
-//     </LocalizationProvider>
-//   );
 // }
 
 const App = ({ task }) => {
@@ -74,7 +55,7 @@ const App = ({ task }) => {
           </Grid>
         </Grid>
         <Box mt={1}>
-          <Button variant="contained" type="submit">
+          <Button variant="contained" type="submit" style={{backgroundImage: 'url(/other.svg)', color: 'white'}}>
             submit
           </Button>
         </Box>

@@ -65,8 +65,8 @@ export function Progress() {
   return (
     <Box sx={{ width: "100%" }}>
       <LinearProgressWithLabel value={progress} />
-      <Box>{remaingDays} days remaining until deadline</Box>
-      <Box>{remaingHours} hours remaining until deadline</Box>
+      <Typography variant="caption">{remaingDays} days remaining until deadline</Typography>
+      {/* not working as expected <Typography variant="caption">{remaingHours} hours remaining until deadline</Typography> */}
     </Box>
   );
 }
