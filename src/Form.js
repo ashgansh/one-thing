@@ -1,23 +1,22 @@
 import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 import { useForm, Controller } from "react-hook-form";
 import { Box, Grid, Input } from "@mui/material";
 
 import { Button } from "@mui/material";
 import toast from "react-hot-toast";
+import { DateTimePicker } from "@mui/lab";
 
-
-// }
+//
 
 const App = ({ task }) => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      created: task?.created || new Date(),
+      created: new Date(),
       name: task?.name || "",
-      deadline: task?.deadline || new Date()
-    }
+      deadline: task?.deadline || new Date(),
+    },
   });
   const onSubmit = (e) => {
     // const fakeCreated = new Date("2021-12-28T16:55:41.435Z");
@@ -25,14 +24,14 @@ const App = ({ task }) => {
     // e.deadline = fakeDeadline;
     // e.created = fakeCreated;
     localStorage.setItem("task", JSON.stringify(e));
-    toast.success('Task added! You can now reload the page')
+    toast.success("Task added! You can now reload the page");
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={5}>
-          <Grid item xs={8}>
+          <Grid item xs={12}>
             <Controller
               name="name"
               control={control}
@@ -46,18 +45,17 @@ const App = ({ task }) => {
               name="deadline"
               control={control}
               render={({ field }) => (
-                <DesktopDatePicker
+                <DateTimePicker
                   {...field}
                   label="Date desktop"
-                  inputFormat="MM/dd/yyyy"
                   renderInput={(params) => <TextField {...params} />}
                 />
               )}
             />
           </Grid>
         </Grid>
-        <Box mt={1}>
-          <Button variant="contained" type="submit" style={{backgroundImage: 'url(/other.svg)', color: 'white'}}>
+        <Box mt={2} mb={1}>
+          <Button variant="contained" type="submit">
             submit
           </Button>
         </Box>
