@@ -1,26 +1,21 @@
 import { Card, Typography } from "@mui/material";
 import { orange } from "@mui/material/colors";
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-
-
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
 import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { Progress } from "./Progress";
 import Form from "./Form";
-import './styles.css'
+import "./styles.css";
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#ffffff',
+      main: "#ffffff",
     },
   },
 });
-
-
-
 
 // const theme = createTheme({
 //   status: {
@@ -42,26 +37,47 @@ function App() {
     getTask();
   }, []);
 
-
   return (
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <Toaster />
-      <Typography color="white" variant="h4" mt={4} mb={4} style={{ textAlign: 'center' }}>You've got something important to do</Typography>
-      <div style={{ height: '100%', }}>
-        <Card elevation={8} style={{
-          position: 'relative',
-          background: 'transparent',
-          color: 'white',
-          maxWidth: 600,
-          margin: 'auto',
-          padding: '2rem'
-        }}>
+      <Typography
+        variant="h4"
+        mt={4}
+        mb={4}
+        style={{ textAlign: "center" }}
+      >
+        You've got something important to do
+      </Typography>
+      <div style={{ height: "100%" }}>
+        <Card
+          elevation={1}
+          style={{
+            position: "relative",
+            background: "transparent",
+            color: "white",
+            maxWidth: 600,
+            margin: "auto",
+            padding: "2rem",
+          }}
+        >
           {ready && <Form task={task} />}
           <Progress />
-
+        <div
+          style={{
+            zIndex: -1,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            backgroundImage: "url(./magic.svg)",
+            backgroundSize: "cover",
+            height: "100%",
+            width: "100%",
+            filter: "blur(25px) brightness(1.50)",
+          }}
+        ></div>
+ 
         </Card>
-        <div style={{ zIndex: -1, position: 'fixed', top: 0, left: 0, backgroundImage: 'url(./magic.svg)', backgroundSize: 'cover', height: '100%', width: '100%' }}></div>
-      </div >
+     </div>
     </ThemeProvider>
   );
 }
