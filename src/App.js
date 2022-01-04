@@ -70,9 +70,10 @@ function App() {
             left: 0,
             backgroundImage: "url(./magic.svg)",
             backgroundSize: "cover",
+            transform: 'scale(1.1)',
             height: "100%",
             width: "100%",
-            filter: "blur(25px) brightness(1.50)",
+            filter: "blur(50px) brightness(1.70)",
           }}
         ></div>
  

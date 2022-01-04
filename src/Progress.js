@@ -33,7 +33,7 @@ LinearProgressWithLabel.propTypes = {
 };
 
 // Random component
-const Completionist = () => <Typography>You are good to go!</Typography>;
+const Completionist = () => <Typography mt={1}>So this is christmas</Typography>;
 
 // Renderer callback with condition
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
