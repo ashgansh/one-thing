@@ -4,7 +4,6 @@
     <rect width="1300" height="1354" fill="url(#paint2_radial_43_494)" style="mix-blend-mode:difference" />
     <rect width="1300" height="1354" fill="url(#paint3_radial_43_494)" style="mix-blend-mode:difference" />
     <rect width="1300" height="1354" fill="url(#paint4_radial_43_494)" style="mix-blend-mode:difference" />
-    <rect width="1300" height="1354" fill="url(#paint5_radial_43_494)" style="mix-blend-mode:difference" />
     <defs>
         <radialGradient id="paint0_radial_43_494" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(222.326 981.818) rotate(-35.7138) scale(337.545 948.76)">
             <stop stop-color="#EA3378" />
