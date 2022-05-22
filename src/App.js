@@ -8,7 +8,7 @@ import { Progress } from "./Progress";
 import Form from "./Form";
 import "./styles.css";
 
-const theme = createTheme();
+const theme = createTheme({ palette: { primary: { main: '#4965f0' } } });
 
 // const theme = createTheme({
 //   status: {
@@ -33,30 +33,37 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Toaster />
-      <Typography
-        variant="h4"
-        mt={4}
-        mb={4}
-        style={{ textAlign: "center", fontFamily: 'Londrina Solid' }}
-      >
-        You've got something important to do
-      </Typography>
-      <div style={{ height: "100%" }}>
-        <Card
-          elevation={1}
-          className="shiny"
-          style={{
-            color: 'black',
-            position: "relative",
-            backgroundSize: 'cover',
-            maxWidth: 600,
-            margin: "auto",
-            padding: "2rem",
-          }}
+      <div style={{ maxWidth: '600px', margin: 'auto' }}>
+        <Typography
+          variant="h4"
+          mt={4}
+          mb={4}
+          style={{ textAlign: "center", fontFamily: 'Londrina Solid' }}
         >
-          {ready && <Form task={task} />}
-          <Progress />
-        </Card>
+          You've got something important to do
+        </Typography>
+        {ready && <Form task={task} />}
+      </div>
+      <div style={{ height: "100%" }}>
+        {ready ?
+          <Card
+            elevation={1}
+            className="shiny"
+            style={{
+              color: 'black',
+              position: "relative",
+              backgroundSize: 'cover',
+              boxSizing: 'border-box',
+              maxWidth: 600,
+              margin: "auto",
+              padding: "2rem",
+            }}
+          >
+
+            <Progress />
+
+          </Card>
+          : 'Loading'}
       </div>
     </ThemeProvider>
   );

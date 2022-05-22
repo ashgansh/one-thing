@@ -44,12 +44,12 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   } else {
     // Render a countdown
     return (
-      <div>
+      <div style={{ display: 'flex' }} >
         <Typography component="div">{days} days </Typography>
-        <Typography component="div">
+        <Typography style={{ marginLeft: '1rem' }} component="div">
           {hours}h:{minutes}m:{seconds}s
         </Typography>
-      </div>
+      </div >
     );
   }
 };
@@ -108,9 +108,9 @@ export function Progress() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <div style={{ fontFamily: 'Londrina Solid', paddingBottom:  '1rem', fontSize: '2rem'}}>{task?.name}</div>
-      <LinearProgressWithLabel value={progress} />
+      <div style={{ fontFamily: 'Londrina Solid', paddingBottom: '1rem', fontSize: '2rem' }}>{task?.name}</div>
       <Countdown />
+      <LinearProgressWithLabel value={progress} />
     </Box>
   );
 }

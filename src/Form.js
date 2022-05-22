@@ -57,7 +57,7 @@ const App = ({ task }) => {
         </Grid>
         <Box mt={2} mb={1}>
           <Button variant="contained" type="submit">
-            submit
+            Add Task
           </Button>
         </Box>
       </form>
