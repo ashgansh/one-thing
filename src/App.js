@@ -8,14 +8,7 @@ import { Progress } from "./Progress";
 import Form from "./Form";
 import "./styles.css";
 
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#ffffff",
-    },
-  },
-});
+const theme = createTheme();
 
 // const theme = createTheme({
 //   status: {
@@ -44,17 +37,18 @@ function App() {
         variant="h4"
         mt={4}
         mb={4}
-        style={{ textAlign: "center" }}
+        style={{ textAlign: "center", fontFamily: 'Londrina Solid' }}
       >
         You've got something important to do
       </Typography>
       <div style={{ height: "100%" }}>
         <Card
           elevation={1}
+          className="shiny"
           style={{
+            color: 'black',
             position: "relative",
-            background: "transparent",
-            color: "white",
+            backgroundSize: 'cover',
             maxWidth: 600,
             margin: "auto",
             padding: "2rem",
@@ -62,23 +56,8 @@ function App() {
         >
           {ready && <Form task={task} />}
           <Progress />
-        <div
-          style={{
-            zIndex: -1,
-            position: "absolute",
-            top: 0,
-            left: 0,
-            backgroundImage: "url(./magic.svg)",
-            backgroundSize: "cover",
-            transform: 'scale(1.1)',
-            height: "100%",
-            width: "100%",
-            filter: "blur(50px) brightness(1.70)",
-          }}
-        ></div>
- 
         </Card>
-     </div>
+      </div>
     </ThemeProvider>
   );
 }

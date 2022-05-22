@@ -31,8 +31,8 @@ const App = ({ task }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid container spacing={5}>
-          <Grid item xs={12}>
+        <Grid container spacing={5} style={{alignItems: 'end'}}>
+          <Grid item xs={8}>
             <Controller
               name="name"
               control={control}
@@ -41,14 +41,14 @@ const App = ({ task }) => {
               )}
             />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={4}>
             <Controller
               name="deadline"
               control={control}
               render={({ field }) => (
                 <DateTimePicker
                   {...field}
-                  label="Date desktop"
+                  label="When is the deadline"
                   renderInput={(params) => <TextField {...params} />}
                 />
               )}

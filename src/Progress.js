@@ -82,6 +82,7 @@ const Countdown = () => {
 
 export function Progress() {
   const [progress, setProgress] = React.useState(0);
+  const [task, setTask] = React.useState(0)
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -97,6 +98,7 @@ export function Progress() {
       const value = Math.min(Math.max(rounded, 0), 100);
 
       setProgress(value);
+      setTask(task)
     }, 1000);
 
     return () => {
@@ -106,6 +108,7 @@ export function Progress() {
 
   return (
     <Box sx={{ width: "100%" }}>
+      <div style={{ fontFamily: 'Londrina Solid', paddingBottom:  '1rem', fontSize: '2rem'}}>{task?.name}</div>
       <LinearProgressWithLabel value={progress} />
       <Countdown />
     </Box>

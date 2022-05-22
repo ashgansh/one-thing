@@ -2,8 +2,32 @@
   font-family: sans-serif;
   text-align: center;
 }
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap");
 
-html, body {
+.shiny {
+  background: radial-gradient(
+        105.5% 66.74% at 7% 26.23%,
+        #dadeff 0%,
+        rgba(245, 239, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(
+        27.88% 93.11% at 95.11% 18.44%,
+        #fcdaff 0%,
+        rgba(245, 239, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(
+        69.61% 69.61% at 16.44% 44%,
+        #f5efff 0%,
+        rgba(245, 239, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #ffffff !important;
+}
+
+html,
+body {
   height: 100%;
   margin: 0;
 }
