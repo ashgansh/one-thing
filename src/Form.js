@@ -31,8 +31,8 @@ const App = ({ task }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid container spacing={5} style={{alignItems: 'end'}}>
-          <Grid item xs={8}>
+        <Grid container spacing={5} style={{ alignItems: 'end' }}>
+          <Grid item xs={12} sm={8}>
             <Controller
               name="name"
               control={control}
@@ -41,7 +41,7 @@ const App = ({ task }) => {
               )}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Controller
               name="deadline"
               control={control}

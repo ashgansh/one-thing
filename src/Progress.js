@@ -4,6 +4,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ReactCountdown from "react-countdown";
+import { Card } from "@mui/material";
 
 function LinearProgressWithLabel(props) {
   return (
@@ -44,10 +45,10 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   } else {
     // Render a countdown
     return (
-      <div style={{ display: 'flex' }} >
+      <div style={{ display: 'flex', marginBottom: '1rem' }} >
         <Typography component="div">{days} days </Typography>
-        <Typography style={{ marginLeft: '1rem' }} component="div">
-          {hours}h:{minutes}m:{seconds}s
+        <Typography style={{ marginLeft: '4px' }} component="div">
+          {hours} hour(s) {minutes} minute(s) {seconds} seconds remaining
         </Typography>
       </div >
     );
@@ -108,9 +109,44 @@ export function Progress() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <div style={{ fontFamily: 'Londrina Solid', paddingBottom: '1rem', fontSize: '2rem' }}>{task?.name}</div>
+      <div style={{ fontFamily: 'Londrina Solid', paddingBottom: '1rem', fontSize: '2rem' }}>{task?.name || 'Loading'}</div>
       <Countdown />
       <LinearProgressWithLabel value={progress} />
     </Box>
   );
+}
+
+export const Tasks = () => {
+
+  const [task, setTask] = React.useState(0)
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      const unparsedTask = localStorage.getItem("task");
+      if (!unparsedTask) return;
+      const task = JSON.parse(unparsedTask);
+      setTask(task)
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [])
+  return task && (
+    <Card
+      elevation={1}
+      className="shiny"
+      style={{
+        color: 'black',
+        position: "relative",
+        backgroundSize: 'cover',
+        boxSizing: 'border-box',
+        maxWidth: 600,
+        margin: "auto",
+        padding: "2rem",
+      }}
+    >
+
+
+      <Progress />
+    </Card>)
 }

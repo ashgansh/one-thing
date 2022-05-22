@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
 import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
-import { Progress } from "./Progress";
+import { Progress, Tasks } from "./Progress";
 import Form from "./Form";
 import "./styles.css";
 
@@ -45,25 +45,7 @@ function App() {
         {ready && <Form task={task} />}
       </div>
       <div style={{ height: "100%" }}>
-        {ready ?
-          <Card
-            elevation={1}
-            className="shiny"
-            style={{
-              color: 'black',
-              position: "relative",
-              backgroundSize: 'cover',
-              boxSizing: 'border-box',
-              maxWidth: 600,
-              margin: "auto",
-              padding: "2rem",
-            }}
-          >
-
-            <Progress />
-
-          </Card>
-          : 'Loading'}
+        <Tasks />
       </div>
     </ThemeProvider>
   );
