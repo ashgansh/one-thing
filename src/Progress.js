@@ -34,7 +34,7 @@ LinearProgressWithLabel.propTypes = {
 };
 
 // Random component
-const Completionist = () => <Typography mt={1}>So this is christmas</Typography>;
+const Completionist = () => <Typography mt={1}>This task should be completed by now</Typography>;
 
 // Renderer callback with condition
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -46,9 +46,8 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
     // Render a countdown
     return (
       <div style={{ display: 'flex', marginBottom: '1rem' }} >
-        <Typography component="div">{days} days </Typography>
-        <Typography style={{ marginLeft: '4px' }} component="div">
-          {hours} hour(s) {minutes} minute(s) {seconds} seconds remaining
+        <Typography component="div">
+          {days} day(s) {hours} hour(s) {minutes} minute(s) {seconds} second(s) remaining
         </Typography>
       </div >
     );
